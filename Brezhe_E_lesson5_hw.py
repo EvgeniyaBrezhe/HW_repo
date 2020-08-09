@@ -1,9 +1,6 @@
 # 1. Дано целое число (int). Определить сколько нулей в этом числе.
-my_number = 123000000000321
-counter = 0
-for index in str(my_number):
-    if index == '0':
-        counter +=1
+my_number = 123000321
+counter = str(my_number).count('0')
 print(counter)
 ############################################
 
@@ -24,10 +21,10 @@ my_list_1 = [1, 2, 3, 4]
 my_list_2 = [11, 22, 33, 44]
 my_result = []
 for index in my_list_1:
-    if index % 2 == 0:
+    if not index % 2:
         my_result.append(index)
 for index in my_list_2:
-    if index % 2 != 0:
+    if index % 2:
         my_result.append(index)
 print(my_result)
 ############################################
@@ -36,7 +33,7 @@ print(my_result)
 # Если my_list [1,2,3,4], то new_list [2,3,4,1]
 my_list = ['a', 1, 'c', 2]
 new_list = my_list.copy()
-new_list.remove(new_list[0])
+new_list.pop(0)
 new_list.append(my_list[0])
 print(new_list)
 ############################################
@@ -44,22 +41,22 @@ print(new_list)
 # 5.Дан список my_list. В ЭТОМ списке первый элемент переставить на последнее место. [1,2,3,4] -> [2,3,4,1].
 # Пересоздавать список нельзя!
 my_list = ['a', 1, 'c', 2]
-my_list.insert(len(my_list), my_list[0])
-my_list.remove(my_list[0])
+my_list.append(my_list[0])
+my_list.pop(0)
 print(my_list)
 ############################################
 
 # 6. Дана строка в которой есть числа (разделяются пробелами). Например "43 больше чем 34, но меньше чем 56".
 # Найти сумму ВСЕХ чисел в этой строке. Для данного примера 133.
-my_string = '55 больше чем 50, но меньше чем 60'
+my_string = '43 больше чем 34, но меньше чем 56'
 new_str = my_string.replace(' ', ',')
 my_list = new_str.split(',')
 counter = 0
 for index in my_list:
-    try:
+    if index.isdigit():
         counter += int(index)
-    except ValueError:
-        counter = counter
+    else:
+        pass
 print(counter)
 ############################################
 
@@ -67,15 +64,15 @@ print(counter)
 # Если строка содержит нечетное количество символов, пропущенный второй символ последней пары должен быть заменен
 # подчеркиванием ('_'). Примеры: 'abcd' -> ['ab', 'cd'], 'abc' -> ['ab', 'c_']
 my_str = 'abcdefghi'
-my_true_list = []
-if len(my_str) % 2 == 0:
-    for index in range(0, len(my_str), 2):
-        my_true_list.append(my_str[index:index + 2])
-if len(my_str) % 2 != 0:
-    my_str = my_str + '_'
-    for index in range(0, len(my_str)-1, 2):
-        my_true_list.append(my_str[index:index + 2])
-print(my_true_list)
+new_str = ''
+my_list = []
+if len(my_str) % 2:
+    new_str = my_str + '_'
+else:
+    new_str = my_str
+for index in range(0, len(new_str), 2):
+    my_list.append(new_str[index:index + 2])
+print(my_list)
 ############################################
 
 # 8. Дана строка my_str в которой символы не повторяются и два символа l_limit, r_limit,
@@ -84,21 +81,21 @@ print(my_true_list)
 my_str = 'My_long str'
 l_limit = 'o'
 r_limit = 't'
-sub_str = ''
-for index in range(my_str.find(l_limit) + 1, my_str.find(r_limit)):
-    sub_str += my_str[index]
+l_index = my_str.find(l_limit)
+r_index = my_str.find(r_limit)
+sub_str = my_str[l_index + 1:r_index]
 print(sub_str)
 ############################################
 
 # 9. Дана строка my_str в которой символы МОГУТ повторяться и два символа l_limit, r_limit,
 # которые точно находятся в этой строке. Причем l_limit левее чем r_limit. В переменную sub_str поместить НАИБОЛЬШУЮ часть
 # строки между этими символами. my_str = "My long string", l_limit = "o", r_limit = "g" -> sub_str = "ng strin".
-my_str = 'Chupakabra'
-l_limit = 'u'
-r_limit = 'a'
-sub_str = ''
-for index in range(my_str.find(l_limit) + 1, my_str.rfind(r_limit)):
-    sub_str += my_str[index]
+# my_str = 'My long string'
+l_limit = 'o'
+r_limit = 'g'
+l_index = my_str.find(l_limit)
+r_index = my_str.rfind(r_limit)
+sub_str = my_str[l_index + 1:r_index]
 print(sub_str)
 ############################################
 
