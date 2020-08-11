@@ -2,35 +2,35 @@
 # элементы из my_list по следующему правилу:
 # Если строка стоит на нечетном месте в my_list, то ее заменить на перевернутую строку. "qwe" на "ewq".
 # Если на четном - оставить без изменения. Задание сделать с использованием enumerate.
-# my_list = ['jsbd', 'lvk', 'halehbr', 'geargae']
-# new_list = []
-# for index, value in enumerate(my_list):
-#     if index % 2:
-#         new_list.append(value[::-1])
-#     else:
-#         new_list.append(value)
-# print(new_list)
+my_list = ['jsbd', 'lvk', 'halehbr', 'geargae']
+new_list = []
+for index, value in enumerate(my_list):
+    if index % 2:
+        new_list.append(value[::-1])
+    else:
+        new_list.append(value)
+print(new_list)
 ############################################
 
 # 2. Дан список строк my_list. Создать новый список в который поместить
 # элементы из my_list у которых первый символ - буква "a".
-# my_list = ['aaa', 'bbb', 'ccc', 'abc', 'a123']
-# new_list = [value for value in my_list if value[0:1] == 'a']
-# print(new_list)
+my_list = ['aaa', 'bbb', 'ccc', 'abc', 'a123']
+new_list = [value for value in my_list if value[0:1] == 'a']
+print(new_list)
 ############################################
 
 # 3. Дан список строк my_list. Создать новый список в который поместить
 # элементы из my_list в которых есть символ - буква "a" на любом месте.
-# my_list = ['aaa', 'bab', 'ccc', 'bca', '123a']
-# new_list = [value for value in my_list if 'a' in value]
-# print(new_list)
+my_list = ['aaa', 'bab', 'ccc', 'bca', '123a']
+new_list = [value for value in my_list if 'a' in value]
+print(new_list)
 ############################################
 
 # 4. Дан список my_list в котором могум быть как строки так и целые числа.
 # Создать новый список в который поместить только строки из my_list.
-# my_list = ['aaa', 123, 'ccc', 456, '123']
-# new_list = [value for value in my_list if type(value) == str]
-# print(new_list)
+my_list = ['aaa', 123, 'ccc', 456, '123']
+new_list = [value for value in my_list if type(value) == str]
+print(new_list)
 ############################################
 
 # 5. Дана строка my_str. Вывести символы, которые встречаются в строке только один раз.
@@ -40,15 +40,22 @@ print(my_set)
 ############################################
 
 # 6. Даны две строки, вывести те символы, которые есть в обеих строках.
-my_str_1 = 'qwertyuiop'
-my_str_2 = 'rtyfgh'
-set_1 = set(my_str_1)
-set_2 = set(my_str_2)
-print(set_1.intersection(set_2)
+my_str_1 = 'qwertyuiopqwertyuiop'
+my_str_2 = 'qwertyqwerty'
+for value in my_str_1:
+    if value in my_str_2:
+        print(value)
 ############################################
+
 # 7. Даны две строки, вывести те символы, которые есть в обеих строках,
 # но в каждой только по одному разу.
+my_str_1 = 'qwertyuiopqwertyuiop'
+my_str_2 = 'qwertyqwerty'
+set_1 = set(my_str_1)
+set_2 = set(my_str_2)
+print(set_1.intersection(set_2))
 ############################################
+
 # 8. Описать с помощью словаря следующую структуру для конкретного человека (можно придумать):
 # Фамилия
 # Имя
@@ -60,7 +67,19 @@ print(set_1.intersection(set_2)
 # Работа
 #     Наличие
 #     Должность
+person = {"Фамилия": "Иванов",
+          "Имя": "Иван",
+          "Возраст": "105",
+          "Проживание": {
+            'Страна': 'Украина',
+            'Город': 'Днепр',
+            'Улица': 'Яворницкого'},
+          "Работа": {
+              "Наличие": "Нет",
+              "Должность": "-"
+          }}
 ############################################
+
 # 9. Описать с помощью словаря следующую структуру (рецепт ненастоящего торта, придумать и указать граммы для продуктов):
 # Составляющие
 #     Коржи
@@ -77,5 +96,19 @@ print(set_1.intersection(set_2)
 #         Какао
 #         Сахар
 #         Масло
-
-
+recipe = {"Составляющие": {
+    "Коржи": {
+        "Мука": "0,5 кг",
+        "Молоко": "100 гр",
+        "Масло": "200 гр",
+        "Яйцо": "4 шт"},
+    "Крем": {
+        "Сахар": "200 гр",
+        "Масло": "100 гр",
+        "Ваниль": "0,5 пакетика",
+        "Сметана": "200 гр"},
+    "Глазурь": {
+        "Какао": "50 гр",
+        "Сахар": "100 гр",
+        "Масло": "100 гр"}
+}}
