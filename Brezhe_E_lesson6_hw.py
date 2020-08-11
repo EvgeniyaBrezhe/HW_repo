@@ -4,7 +4,7 @@
 # перевернутую строку. "qwe" на "ewq".
 # Если на четном - оставить без изменения.
 # Задание сделать с использованием enumerate.
-my_list = ['jsbd', 'lvk', 'halehbr', 'geargae']
+# my_list = ['jsbd', 'lvk', 'halehbr', 'geargae']
 
 ############################################
 # 2. Дан список строк my_list. Создать новый список в который поместить
@@ -59,3 +59,13 @@ my_list = ['jsbd', 'lvk', 'halehbr', 'geargae']
 #         Какао
 #         Сахар
 #         Масло
+
+my_list = ['a', 1, 'c', 2]
+new_list = my_list.copy()
+# 2
+new_list.pop(0)
+print(new_list)
+# 1
+value = new_list.pop(0)
+print(value)
+
