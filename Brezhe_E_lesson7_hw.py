@@ -34,7 +34,7 @@ def my_print(string):
     print(f"***{string}***")
 
 
-my_string = "I'm the string"
+my_string = "I'm also the string"
 my_print(my_string)
 
 ############################################
@@ -53,7 +53,7 @@ def my_print(string):
     print('*' * len(string))
 
 
-my_string = "I'm the string"
+my_string = "I'm also the string"
 my_print(my_string)
 
 ############################################
@@ -69,5 +69,5 @@ def my_print(string):
     print('*' * (len(middle_string)))
 
 
-my_string = "I'm the string"
+my_string = "I'm also the string"
 my_print(my_string)
