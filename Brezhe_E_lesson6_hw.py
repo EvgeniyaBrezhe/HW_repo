@@ -34,26 +34,35 @@ print(new_list)
 ############################################
 
 # 5. Дана строка my_str. Вывести символы, которые встречаются в строке только один раз.
-my_str = 'qwerty_qwe'
-my_set = set(my_str)
-print(my_set)
+my_str = 'QWEqwerty_qwe'
+for value in my_str:
+    if my_str.count(value) == 1:
+        print(value)
 ############################################
 
 # 6. Даны две строки, вывести те символы, которые есть в обеих строках.
-my_str_1 = 'qwertyuiopqwertyuiop'
-my_str_2 = 'qwertyqwerty'
-for value in my_str_1:
-    if value in my_str_2:
-        print(value)
+my_str_1 = 'QWERTy'
+my_str_2 = 'qwerty'
+my_set_1 = set(my_str_1)
+my_set_2 = set(my_str_2)
+print(my_set_1.intersection(my_set_2))
 ############################################
 
 # 7. Даны две строки, вывести те символы, которые есть в обеих строках,
 # но в каждой только по одному разу.
-my_str_1 = 'qwertyuiopqwertyuiop'
-my_str_2 = 'qwertyqwerty'
-set_1 = set(my_str_1)
-set_2 = set(my_str_2)
-print(set_1.intersection(set_2))
+my_str_1 = 'QWERTYqwertyQWERTY'
+my_str_2 = 'qwerty_qwe'
+my_list_1 = []
+my_list_2 = []
+for value in my_str_1:
+    if my_str_1.count(value) == 1:
+        my_list_1 += value
+for value in my_str_2:
+    if my_str_2.count(value) == 1:
+        my_list_2 += value
+my_set_1 = set(my_list_1)
+my_set_2 = set(my_list_2)
+print(my_set_1.intersection(my_set_2))
 ############################################
 
 # 8. Описать с помощью словаря следующую структуру для конкретного человека (можно придумать):
