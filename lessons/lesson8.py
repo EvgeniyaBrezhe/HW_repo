@@ -39,3 +39,5 @@ print(area_ABC)
 # нельзя использовать для проработки логики
 assert abs(get_area_gerone((0, 0), (0, 4), (3, 0)) - 6.0 < 0.001)
 print(area_ABC)
+
+# py.checkio.org
